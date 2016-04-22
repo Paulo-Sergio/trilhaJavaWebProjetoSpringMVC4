@@ -17,20 +17,20 @@ public class ContaController {
 
 	@RequestMapping("/form")
 	public String formulario() {
-		return "formulario";
+		return "conta/formulario";
 	}
 
 	@RequestMapping("/adicionaConta")
 	public String adiciona(@Valid Conta conta, BindingResult result) {
-		if(result.hasErrors()){
-			return "formulario";
+		if(result.hasFieldErrors("descricao")){
+			return "conta/formulario";
 		}
 		
 		System.out.println("Conta adicionada é: " + conta.getDescricao());
 		ContaDAO dao = new ContaDAO();
 		dao.adiciona(conta);
 
-		return "conta-adicionada";
+		return "conta/conta-adicionada";
 	}
 
 	@RequestMapping("/listaContas")

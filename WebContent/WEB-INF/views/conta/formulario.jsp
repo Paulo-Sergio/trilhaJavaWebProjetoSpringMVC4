@@ -14,8 +14,7 @@
 	<form action="adicionaConta" method="post">
 		Descrição: <br>
 		<textarea name="descricao" rows="5" cols="100"></textarea>
-		<form:errors path="conta.descricao"/>
-		<br>
+		<p><form:errors path="conta.descricao"/></p>
 		
 		Valor: <br>
 		<input type="text" name="valor">

@@ -9,7 +9,7 @@ public class Conta {
 	
 	private Long id;
 
-	@NotNull 
+	@NotNull(message="{conta.descricao.vazia}")
 	@Size(min=5, message="{conta.formulario.descricao.tamanho}")
 	private String descricao;
 
