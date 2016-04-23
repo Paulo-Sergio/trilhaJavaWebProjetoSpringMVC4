@@ -7,6 +7,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Lista de Contas</title>
+<script src="resources/js/jquery.js"></script>
+
+<script type="text/javascript">
+
+	function deuCerto(){
+		alert("Conta paga com sucesso!");
+	}
+	
+	function pagaConta(id){
+		$.get("pagaConta?id=" + id, deuCerto());
+	}
+	
+</script>
+
 </head>
 <body>
 
@@ -37,7 +51,13 @@
 				</td>
 				<td><fmt:formatDate value="${conta.dataPagamento.time}"
 						pattern="dd/MM/yyyy" /></td>
-				<td><a href="removeConta?id=${conta.id}">Deletar</a></td>
+				<td>
+					<a href="removeConta?id=${conta.id}">Deletar</a> | 
+					
+					<c:if test="${conta.paga eq false}">
+						<a href="#" onclick="pagaConta(${conta.id})">Pagar</a>
+					</c:if>
+				</td>
 			</tr>
 		</c:forEach>
 
