@@ -15,6 +15,10 @@ import br.com.caelum.contas.modelo.Conta;
 
 @Controller
 public class ContaController {
+	
+	public ContaController() {
+		
+	}
 
 	@RequestMapping("/form")
 	public String formulario() {
