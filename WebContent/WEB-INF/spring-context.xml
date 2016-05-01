@@ -16,6 +16,13 @@
 	<mvc:interceptors>
 		<bean class="br.com.caelum.contas.interceptor.AutorizadorInterceptor" />
 	</mvc:interceptors>
+	
+	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost/aluraprojetospringmvc4" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
